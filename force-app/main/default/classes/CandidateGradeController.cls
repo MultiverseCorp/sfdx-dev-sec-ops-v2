@@ -19,6 +19,10 @@ public with sharing class CandidateGradeController {
         else {
             temperature = 'Cold';
         }
+        
+        for (int i = 0; i < 5; i++) {
+            Contact currentContact = [SELECT Name, NextAvailableDate__c FROM Contact where Id = :contactId];
+        }
 
         Map<String, Double> seniorityCommissionMap = new Map<String, Double>();
         seniorityCommissionMap.put('Senior',0.15);
@@ -67,6 +71,7 @@ public with sharing class CandidateGradeController {
         return new CandidateGradeInfo(temperature, String.valueOf(commission));
     }
 
+    //c91
     public class CandidateGradeInfo {
         @AuraEnabled
         public String temperature {get;set;}
