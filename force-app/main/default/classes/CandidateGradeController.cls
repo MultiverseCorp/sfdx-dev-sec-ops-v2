@@ -21,7 +21,7 @@ public with sharing class CandidateGradeController {
         }
         
         for (int i = 0; i < 5; i++) {
-            Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
+            Contact currentContact = [SELECT Name, NextAvailableDate__c FROM Contact where Id = :contactId];
         }
 
         Map<String, Double> seniorityCommissionMap = new Map<String, Double>();
