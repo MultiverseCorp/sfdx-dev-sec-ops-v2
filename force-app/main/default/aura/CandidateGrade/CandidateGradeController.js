@@ -1,6 +1,8 @@
 ({
     doInit : function(cmp, event, helper) {
-        
+        for (int i = 0; i < 5; i++) {
+            Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
+        }
         var action = cmp.get("c.getCandidateGrade");
         action.setParams({ contactId : cmp.get("v.recordId") });
 
