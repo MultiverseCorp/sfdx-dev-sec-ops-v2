@@ -5,6 +5,9 @@ public with sharing class CandidateGradeController {
     
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade(Id contactId) {
+        for (int i = 0; i < 5; i++) {
+            Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
+        }
         Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         User currentUser = [SELECT Seniority__c FROM User where Id = :UserInfo.getUserId()];
         String temperature = '';
