@@ -6,7 +6,7 @@ public with sharing class CandidateGradeController {
     @AuraEnabled
     public static CandidateGradeInfo getCandidateGrade(Id contactId, String contactIds) {
         
-        // Build the query
+        // Build the query 2
         String selectQueryStrings = 'SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = \'' + contactIds + '\'';
         Contact currentContacts = Database.query(selectQueryStrings);
         
