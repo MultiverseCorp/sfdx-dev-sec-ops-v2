@@ -95,12 +95,7 @@ public with sharing class CandidateGradeController {
         for (int i = 0; i < 5; i++) {
             Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         }
-        for (int i = 0; i < 5; i++) {
-            Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
-        }
-        for (int i = 0; i < 5; i++) {
-            Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
-        }
+
         for (int i = 0; i < 5; i++) {
             Contact currentContact = [SELECT Name, Salary__c, NextAvailableDate__c FROM Contact where Id = :contactId];
         }
@@ -163,7 +158,7 @@ public with sharing class CandidateGradeController {
         String temperature = '';
         Double commission = 0;
         
-        if (currentContact.Salary__c >= 100000 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
+        if (currentContact.Salary__c >= 100 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
             temperature = 'Hot';
         }
         else if (currentContact.Salary__c < 100000 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
@@ -195,7 +190,7 @@ public with sharing class CandidateGradeController {
         String temperature = '';
         Double commission = 0;
         
-        if (currentContact.Salary__c >= 100000 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
+        if (currentContact.Salary__c >= 100 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
             temperature = 'Hot';
         }
         else if (currentContact.Salary__c < 100000 && Date.today().daysBetween(currentContact.NextAvailableDate__c) < 90 ) {
